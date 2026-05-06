@@ -33,6 +33,7 @@ useEffect(() => {
     github: editingProject.github || "",
     });
 
+    console.log("Editing project:", editingProject);
     setShowForm(true);
   }
 }, [editingProject]);
