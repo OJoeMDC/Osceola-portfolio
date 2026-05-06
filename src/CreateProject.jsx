@@ -89,6 +89,7 @@ useEffect(() => {
       progress: "",
       skills: [],
       type: "",
+      status: "",
       liveDemo: "",
       github: "",
     });
@@ -99,20 +100,6 @@ useEffect(() => {
     }
   }
 
-
-  //   // setProjects((prevProjects) => [...prevProjects, newProject]); --- OLD local storage function ---
-  //   addProject(newProject); // Call the API add function
-
-  //   setFormData({
-  //     title: "",
-  //     description: "",
-  //     progress: "",
-  //     skills: [],
-  //     type: "",
-  //   });
-
-  //   setShowForm(false);
-  // }
 
 // List of skills for checkbox options
   const skillsList = [
