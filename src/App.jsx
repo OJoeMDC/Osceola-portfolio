@@ -7,7 +7,7 @@ import CreateProject from "./CreateProject";
 
 const categories = ["Front-End", "Back-End", "Full-Stack"];
 
-function Home({ isAdmin, projects, setProjects, deleteProject, addProject, setEditingProject }) {
+function Home({ isAdmin, projects, setProjects, deleteProject, addProject, setEditingProject, editingProject, editProject }) {
 
   function handleDeleteProject(projectID) {
   deleteProject(projectID); // Call the API delete function
@@ -71,7 +71,7 @@ function Home({ isAdmin, projects, setProjects, deleteProject, addProject, setEd
 
       {/* Projects Section */}
 
-              {isAdmin && <CreateProject addProject ={addProject} />}
+              {isAdmin && <CreateProject addProject={addProject} editingProject={editingProject} editProject={editProject} />}
 
       <section className="section-container projects">
         <div className="section-heading">
@@ -111,7 +111,8 @@ function Home({ isAdmin, projects, setProjects, deleteProject, addProject, setEd
                   <>
                     <button className="delete-button" onClick={() => deleteProject(project.id)}>
                       Delete
-                    </button><button className="edit-button" onClick={() => setEditingProject(project)}>
+                    </button>
+                    <button className="edit-button" onClick={() => setEditingProject(project)}>
                         Edit
                     </button>
                   </>

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import "./CreateProject.css";
 
-export default function CreateProject({ addProject }) {
+export default function CreateProject({ addProject, editProject, editingProject }) {
   const [showForm, setShowForm] = useState(false);
 
 
@@ -20,6 +20,22 @@ export default function CreateProject({ addProject }) {
   };
 }, [showForm]);
 
+
+useEffect(() => {
+  if (editingProject) {
+    setFormData({
+    title: editingProject.title || "",
+    description: editingProject.description ||  "",
+    progress: editingProject.progress || "",
+    skills: editingProject.skills || [],
+    type: editingProject.type || "",
+    liveDemo: editingProject.liveDemo || "",
+    github: editingProject.github || "",
+    });
+
+    setShowForm(true);
+  }
+}, [editingProject]);
 
 
 ////////////////
@@ -48,8 +64,7 @@ export default function CreateProject({ addProject }) {
   // Handle form submission
   function handleSubmit(e) {
     e.preventDefault();
-
-    const newProject = {
+    const projectData = {
       title: formData.title,
       description: formData.description,
       progress: formData.progress,
@@ -61,8 +76,11 @@ export default function CreateProject({ addProject }) {
     };
 
 
-    // setProjects((prevProjects) => [...prevProjects, newProject]); --- OLD local storage function ---
-    addProject(newProject); // Call the API add function
+    if (editingProject) {
+        editProject(editingProject.id, projectData);
+      } else {
+      addProject(projectData);
+    }
 
     setFormData({
       title: "",
@@ -70,10 +88,27 @@ export default function CreateProject({ addProject }) {
       progress: "",
       skills: [],
       type: "",
+      liveDemo: "",
+      github: "",
     });
 
     setShowForm(false);
   }
+
+
+  //   // setProjects((prevProjects) => [...prevProjects, newProject]); --- OLD local storage function ---
+  //   addProject(newProject); // Call the API add function
+
+  //   setFormData({
+  //     title: "",
+  //     description: "",
+  //     progress: "",
+  //     skills: [],
+  //     type: "",
+  //   });
+
+  //   setShowForm(false);
+  // }
 
 // List of skills for checkbox options
   const skillsList = [
