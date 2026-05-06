@@ -158,9 +158,9 @@ useEffect(() => {
         <div className="modal" onClick={(e) => e.stopPropagation()}>
           <div className="formTitle">
             <h2>
-              {editingProject ? "Edit Project" : "Create New Project"}
+              {editingProject ? "Editing Project: ${editingProject.title}" : "Create New Project"}
             </h2>
-            <button onClick={() => setShowForm(false)}>X</button>
+            <button onClick={() => {setShowForm(false); setEditingProject(false);} }>X</button>
           </div>
           
           {/*Form fields for project creation*/}
