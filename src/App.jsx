@@ -71,7 +71,12 @@ function Home({ isAdmin, projects, setProjects, deleteProject, addProject, setEd
 
       {/* Projects Section */}
 
-              {isAdmin && <CreateProject addProject={addProject} editingProject={editingProject} editProject={editProject} setEditingProject={setEditingProject} />}
+              {isAdmin && <CreateProject 
+              addProject={addProject} 
+              editingProject={editingProject} 
+              editProject={editProject} 
+              setEditingProject={setEditingProject} 
+              />}
 
       <section className="section-container projects">
         <div className="section-heading">

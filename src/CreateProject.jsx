@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import "./CreateProject.css";
 
-export default function CreateProject({ addProject, editProject, editingProject }) {
+export default function CreateProject({ addProject, editProject, editingProject, setEditingProject }) {
   const [showForm, setShowForm] = useState(false);
 
 
