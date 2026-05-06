@@ -1,58 +1,13 @@
 import React from "react";
 import { HashRouter, Routes, Route } from "react-router-dom";
+import { useState, useEffect } from "react";
 import "./App.css";
 import CreateProject from "./CreateProject";
 
-const starterProjects = [
-  {
-    id: 1,
-    title: "ToDo Task Manager",
-    type: "Full-Stack",
-    description:
-      "A clean React todo app with reusable components, persistent dark mode, CSS variables, and localStorage.",
-    skill: ["React", "CSS", "localStorage"],
-    status: "Completed",
-    liveDemo: "",
-    github: "",
-  },
-  {
-    id: 2,
-    title: "Restaurant Website Concept",
-    type: "Front-End",
-    description:
-      "A responsive restaurant landing page focused on menu organization, visual hierarchy, and clean user flow.",
-    skill: ["Framer", "CMS", "Responsive Design"],
-    status: "In Progress",
-    liveDemo: "",
-    github: "",
-  },
-  {
-    id: 3,
-    title: "Inventory API",
-    type: "Back-End",
-    description:
-      "A backend project for managing items, users, and CRUD operations through API endpoints.",
-    skill: ["Node.js", "Express", "SQL"],
-    status: "Planned",
-    liveDemo: "",
-    github: "",
-  },
-  {
-    id: 4,
-    title: "Invoice Tracker",
-    type: "Full-Stack",
-    description:
-      "A full-stack app for creating invoices, tracking payment status, and storing client/project records.",
-    skill: ["React", "Node.js", "Database", "Auth"],
-    status: "Planned",
-    liveDemo: "",
-    github: "",
-  },
-];
 
 const categories = ["Front-End", "Back-End", "Full-Stack"];
 
-function Home({ isAdmin, projects, setProjects, deleteProject, addProject }) {
+function Home({ isAdmin, projects, setProjects, deleteProject, addProject, setEditingProject }) {
 
   function handleDeleteProject(projectID) {
   deleteProject(projectID); // Call the API delete function
@@ -153,9 +108,13 @@ function Home({ isAdmin, projects, setProjects, deleteProject, addProject }) {
 
               <div>
                 {isAdmin && (
-                  <button className="delete-button" onClick={() => deleteProject(project.id)}>
-                    Delete
-                  </button>
+                  <>
+                    <button className="delete-button" onClick={() => deleteProject(project.id)}>
+                      Delete
+                    </button><button className="edit-button" onClick={() => setEditingProject(project)}>
+                        Edit
+                    </button>
+                  </>
                 )}
               </div>
             </article>
@@ -249,19 +208,6 @@ function App() {
     setProjects(data);
   }
   
-  // POST
-  async function addProject(project) {
-    await fetch(`${API}/projects`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(project),
-    });
-  
-    fetchProjects(); // Refresh project list after adding new project
-  }
-  
   // DELETE
   async function deleteProject(projectID) {
     await fetch(`${API}/projects/${projectID}`, {
@@ -270,17 +216,45 @@ function App() {
   
     fetchProjects(); // Refresh project list after deleting project
   }
+
+    // POST
+  async function addProject(project) {
+    await fetch(`${API}/projects`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(project),
+    });
+    
+    fetchProjects();
+  }
+
+    //EDIT
+    async function editProject(projectID, updatedProject) {
+      await fetch(`${API}/projects/${projectID}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(updatedProject),
+      });
+      
+      setEditingProject(null);
+      fetchProjects();
+    }
   
 
-React.useEffect(() => {fetchProjects()}, []); // Fetch projects on initial load
+useEffect(() => {fetchProjects()}, []); // Fetch projects on initial load
 
-const [projects, setProjects] = React.useState([]);
+const [projects, setProjects] = useState([]);
+const [editingProject, setEditingProject] = useState(null);
 
   return (
     <HashRouter>
       <Routes>
-        <Route path="/" element={<Home projects={projects} setProjects={setProjects} deleteProject={deleteProject} />} />
-        <Route path="/admin" element={<Home isAdmin={true} projects={projects} setProjects={setProjects} deleteProject={deleteProject} addProject={addProject} />} />
+        <Route path="/" element={<Home projects={projects} setProjects={setProjects} deleteProject={deleteProject} setEditingProject={setEditingProject} editProject={editProject} />} />
+        <Route path="/admin" element={<Home isAdmin={true} projects={projects} setProjects={setProjects} deleteProject={deleteProject} addProject={addProject} setEditingProject={setEditingProject} editProject={editProject} />} />
         
       </Routes>
     </HashRouter>
