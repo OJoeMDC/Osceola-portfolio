@@ -192,6 +192,10 @@ body {
   border-color: #3b82f6;
 }
 
+.project-buttons {
+  gap: 24px;
+}
+
 .project-topline {
   display: flex;
   justify-content: space-between;

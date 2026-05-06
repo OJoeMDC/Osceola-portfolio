@@ -111,7 +111,7 @@ function Home({ isAdmin, projects, setProjects, deleteProject, addProject, setEd
                 </a>
               </div>
 
-              <div>
+              <div className="project-buttons">
                 {isAdmin && (
                   <>
                     <button className="delete-button" onClick={() => deleteProject(project.id)}>
