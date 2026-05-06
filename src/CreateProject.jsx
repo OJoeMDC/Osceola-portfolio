@@ -71,7 +71,7 @@ useEffect(() => {
       progress: formData.progress,
       skill: formData.skills,
       type: formData.type,
-      status: formData.progress < 100 ? "In Progress" : "Complete",
+      status: formData.progress == 100 ? "Complete" : "In Progress",
       liveDemo: formData.liveDemo,
       github: formData.github,
     };
