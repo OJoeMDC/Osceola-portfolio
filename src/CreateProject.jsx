@@ -27,7 +27,7 @@ useEffect(() => {
     title: editingProject.title || "",
     description: editingProject.description ||  "",
     progress: editingProject.progress || "",
-    skills: editingProject.skills || [],
+    skills: editingProject.skill || [],
     type: editingProject.type || "",
     liveDemo: editingProject.liveDemo || "",
     github: editingProject.github || "",
