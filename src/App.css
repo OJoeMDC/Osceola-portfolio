@@ -192,8 +192,9 @@ body {
   border-color: #3b82f6;
 }
 
-.project-buttons {
-  gap: 24px;
+.project-buttons button {
+  margin-left: 12px;
+  margin-right: 12px;
 }
 
 .project-topline {
