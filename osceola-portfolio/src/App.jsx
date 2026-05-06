@@ -1,122 +1,291 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import React from "react";
+import { HashRouter, Routes, Route } from "react-router-dom";
+import "./App.css";
+import CreateProject from "./CreateProject";
 
-function App() {
-  const [count, setCount] = useState(0)
+const starterProjects = [
+  {
+    id: 1,
+    title: "ToDo Task Manager",
+    type: "Full-Stack",
+    description:
+      "A clean React todo app with reusable components, persistent dark mode, CSS variables, and localStorage.",
+    skill: ["React", "CSS", "localStorage"],
+    status: "Completed",
+    liveDemo: "",
+    github: "",
+  },
+  {
+    id: 2,
+    title: "Restaurant Website Concept",
+    type: "Front-End",
+    description:
+      "A responsive restaurant landing page focused on menu organization, visual hierarchy, and clean user flow.",
+    skill: ["Framer", "CMS", "Responsive Design"],
+    status: "In Progress",
+    liveDemo: "",
+    github: "",
+  },
+  {
+    id: 3,
+    title: "Inventory API",
+    type: "Back-End",
+    description:
+      "A backend project for managing items, users, and CRUD operations through API endpoints.",
+    skill: ["Node.js", "Express", "SQL"],
+    status: "Planned",
+    liveDemo: "",
+    github: "",
+  },
+  {
+    id: 4,
+    title: "Invoice Tracker",
+    type: "Full-Stack",
+    description:
+      "A full-stack app for creating invoices, tracking payment status, and storing client/project records.",
+    skill: ["React", "Node.js", "Database", "Auth"],
+    status: "Planned",
+    liveDemo: "",
+    github: "",
+  },
+];
 
-  return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
+const categories = ["Front-End", "Back-End", "Full-Stack"];
+
+function Home({ isAdmin, projects, setProjects, deleteProject, addProject }) {
+
+  function handleDeleteProject(projectID) {
+  deleteProject(projectID); // Call the API delete function
+  }
+
+  return(
+    <main className="portfolio-page">
+
+      {/* Navigation */}
+      <nav className="nav"> 
+          <div className="logo nav-links">
+            <a href='#'>OsceolaDev</a>
+          </div>
+          <div className="nav-links">
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </nav>
+
+
+
+      {/* Hero Section */}
+      <section className="hero section-container">
+        <div className="hero-grid">
+          <section className="hero-content">
+            <h1>Hi, I'm Osceola</h1>
+            <p className="eyebrow">Front-End • Back-End • Full-Stack</p>
+            <p className="hero-description">
+              Full-stack developer experienced in building scalable applications and cloud-based solutions.
+            </p>
+            <div className="hero-buttons">
+              <a className="primary-button" href="#projects">View Projects</a>
+              <a className="secondary-button" href="#contact">Contact Me</a>
+            </div>
+          </section>
+
+
+          {/* Focus Card in Hero */}
+          <aside className="focus-card">
+            <h2>Building full-stack confidence</h2>
+            <p className="eyebrow">Current Focus</p>
+            <div className="category-list">
+              {categories.map((category) => (
+                <div className="category-item" key={category}>
+                  <span>{category}</span>
+                  <span>{projects.filter((project) => project.type === category).length} project</span>
+                </div>
+              ))}
+              <div className="category-item experience">
+                <span>Experience</span>
+                <span>5 Years</span>
+              </div>
+            </div>
+          </aside>
         </div>
-        <div>
-          <h1>Get started</h1>
+      </section>
+
+
+
+
+      {/* Projects Section */}
+
+              {isAdmin && <CreateProject addProject ={addProject} />}
+
+      <section className="section-container projects">
+        <div className="section-heading">
+          <div>
+            <h2>Work Board</h2>
+            <p className="eyebrow">Projects</p>
+          </div>
+        </div>
+
+        <div className="project-grid">
+          {projects.map((project) => (
+            <article className="project-card" key={project.id}>
+              <div className="project-topline">
+                <div>
+                  <p>{project.type}</p>
+                  <h3>{project.title}</h3>
+                </div>
+                <span>{project.status}</span>
+              </div>
+              <p className="project-description">{project.description}</p>
+              <div className="skill-list">
+                {project.skill.map((item) => (
+                  <span key={item}>{item}</span>
+                ))}
+              </div>
+              <div className="project-links">
+                <a href={project.liveDemo.startsWith('http') ? project.liveDemo : `https://${project.liveDemo}`} target="_blank" rel="noopener noreferrer"> {/* checks if it has HTTP and adds HTTPS if it doesn't*/}
+                  Live Demo
+                </a>
+                <a href={project.github.startsWith('http') ? project.github : `https://${project.github}`} target="_blank" rel="noopener noreferrer"> {/* Also opens in new tab, and doesnt allow the new tab to access origin tab */}
+                  GitHub
+                </a>
+              </div>
+
+              <div>
+                {isAdmin && (
+                  <button className="delete-button" onClick={() => deleteProject(project.id)}>
+                    Delete
+                  </button>
+                )}
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+
+
+      {/* Skills Section */}
+      <section id="skills" className="section-container skills-section">
+        <div className="skills-card">
+          <h2>Certifications // <b className="highlight">Skills</b> // Education</h2>
+          <div className="skills-grid">
+            <div>
+              <h3 className="listTitle">Certifications</h3>
+              <ul className="list">
+                <li>CoITB Certified Javascript Professional Exam</li>
+                <li>CoITB Certified React Developer Exam</li>
+                <li>CoITB Certified MySQL Exam</li>
+                <li>CoITB Certified HTML & CSS Exam</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="listTitle">Skills</h3>
+              <ul className="list">
+                <p className="eyebrow listTitle">Code</p>
+                <li> MySQL</li>
+                <li> React</li>
+                <li> CSS</li>
+                <li>Node.js</li>
+                <p className="eyebrow listTitle">Design</p>
+                <li> Framer</li>
+                <li> Figma</li>
+                <li> Wireframing</li>
+                <li> Responsive layouts</li>
+                <li> Reusable components</li>
+                <li> Mobile-first Design</li>
+                <p className="eyebrow listTitle">Other</p>
+                <li> APIs</li>
+                <li> Local storage</li>
+                <li> Server-side logic</li>
+                <li> AWS & Azure</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="listTitle">Education</h3>
+              <ul className="list">
+                <li>Javascript Professional Developer Course</li>
+                <li>CIW Javascript Specialist Course</li>
+                <li>Mysql Backend Developer Course</li>
+                <li>HTML + CSS Developer Course</li>
+                <li>React Developer Course</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      
+      {/* Contact Section */}
+      <section id="contact" className="section-container contact-section">
+        <div className="contact-card">
+          <h2>Let’s build something <b className="highlight">together.</b></h2>
           <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
+            I’m growing my skills through real projects and looking for opportunities to apply them in practical environments.
           </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
-
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
+          <div className="contact-buttons">
+            <a className="email-button" href="mailto:ojoe.mdc@gmail.com">Email Me</a>
+            <a className="linkedin-button" href="https://www.linkedin.com/in/osceola-martin-del-campo-0ab1b6328">LinkedIn</a>
+          </div>
         </div>
       </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
+    </main>
   )
 }
 
-export default App
+function App() {
+
+
+  ///////////////
+  /* API Stuff */
+  ///////////////
+  const API = "https://26kaqiv1q8.execute-api.us-east-1.amazonaws.com/prod";
+  
+  // GET
+  async function fetchProjects() {
+    const res = await fetch(`${API}/projects`);
+    const data = await res.json();
+    setProjects(data);
+  }
+  
+  // POST
+  async function addProject(project) {
+    await fetch(`${API}/projects`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(project),
+    });
+  
+    fetchProjects(); // Refresh project list after adding new project
+  }
+  
+  // DELETE
+  async function deleteProject(projectID) {
+    await fetch(`${API}/projects/${projectID}`, {
+      method: "DELETE",
+    });
+  
+    fetchProjects(); // Refresh project list after deleting project
+  }
+  
+
+React.useEffect(() => {fetchProjects()}, []); // Fetch projects on initial load
+
+const [projects, setProjects] = React.useState([]);
+
+  return (
+    <HashRouter>
+      <Routes>
+        <Route path="/" element={<Home projects={projects} setProjects={setProjects} deleteProject={deleteProject} />} />
+        <Route path="/admin" element={<Home isAdmin={true} projects={projects} setProjects={setProjects} deleteProject={deleteProject} addProject={addProject} />} />
+        
+      </Routes>
+    </HashRouter>
+      
+  );
+}
+
+export default App;

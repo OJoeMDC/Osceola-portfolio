@@ -1,0 +1,135 @@
+/* Center the whole form */
+form {
+  max-width: 500px;
+  margin: 60px auto;
+  padding: 30px;
+  background: #1a1d24;
+  border-radius: 12px;
+}
+
+/* Title */
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+    color: white;
+}
+
+.formTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Stack inputs nicely */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Inputs */
+input,
+textarea,
+select {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background: #0f1117;
+  color: white;
+  font-family: inherit;
+}
+
+/* container for all checkboxes */
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px 20px;
+}
+
+/* each checkbox row */
+.skills-container label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: #0f1117;
+  border: 1px solid #2a2f3a;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* checkbox itself */
+.skills-container input[type="checkbox"] {
+  margin: 0;
+  display: none;
+}
+
+.skills-container label:hover {
+  background: #1f232b;
+}
+
+.skills-container label.selected {
+  background: #3b82f6;
+  border-color: #2563eb;
+  color: white;
+}
+
+
+
+/* Textarea size */
+textarea {
+  min-height: 100px;
+  resize: none;
+}
+
+/* Button */
+button {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #3b82f6;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #2563eb;
+}
+
+/* dark background overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* modal box */
+.modal {
+  background: #1a1d24;
+  padding: 30px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+
+  max-height: 80vh;     /* limits height */
+  overflow-y: auto;     /* enables scroll inside */
+}
+
+/* close button */
+.modal button {
+  margin-bottom: 10px;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
