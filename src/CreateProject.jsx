@@ -158,7 +158,7 @@ useEffect(() => {
         <div className="modal" onClick={(e) => e.stopPropagation()}>
           <div className="formTitle">
             <h2>
-              {editingProject ? "Editing Project: ${editingProject.title}" : "Create New Project"}
+              {editingProject ? `Editing Project: ${editingProject.title}` : "Create New Project"}
             </h2>
             <button onClick={() => {setShowForm(false); setEditingProject(false);} }>X</button>
           </div>

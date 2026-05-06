@@ -255,7 +255,7 @@ const [editingProject, setEditingProject] = useState(null);
     <HashRouter>
       <Routes>
         <Route path="/" element={<Home projects={projects} setProjects={setProjects} deleteProject={deleteProject} setEditingProject={setEditingProject} editProject={editProject} />} />
-        <Route path="/admin" element={<Home isAdmin={true} projects={projects} setProjects={setProjects} deleteProject={deleteProject} addProject={addProject} setEditingProject={setEditingProject} editingProject={editProject} editProject={editProject} />} />
+        <Route path="/admin" element={<Home isAdmin={true} projects={projects} setProjects={setProjects} deleteProject={deleteProject} addProject={addProject} setEditingProject={setEditingProject} editingProject={editingProject} editProject={editProject} />} />
         
       </Routes>
     </HashRouter>
