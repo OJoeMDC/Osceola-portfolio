@@ -205,7 +205,7 @@ function App() {
   ///////////////
   /* API Stuff */
   ///////////////
-  const API = "https://26kaqiv1q8.execute-api.us-east-1.amazonaws.com/prod";
+  const API = "https://26kaqiv1q8.execute-api.us-east-1.amazonaws.com";
   
   // GET
   async function fetchProjects() {
