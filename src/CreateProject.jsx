@@ -93,6 +93,9 @@ useEffect(() => {
     });
 
     setShowForm(false);
+    if (editingProject) {
+      setEditingProject(null);
+    }
   }
 
 
@@ -153,7 +156,9 @@ useEffect(() => {
       <div className="modal-overlay" onClick={() => setShowForm(false)}>
         <div className="modal" onClick={(e) => e.stopPropagation()}>
           <div className="formTitle">
-            <h2>Create New Project</h2>
+            <h2>
+              {editingProject ? "Edit Project" : "Create New Project"}
+            </h2>
             <button onClick={() => setShowForm(false)}>X</button>
           </div>
           
@@ -228,7 +233,7 @@ useEffect(() => {
               onChange={handleChange}
             />
 
-            <button type="submit">Create Project</button>
+            <button type="submit">{editingProject ? "Submit" : "Create Project"}</button>
           </form>
         </div>
       </div>
