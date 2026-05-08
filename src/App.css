@@ -87,7 +87,6 @@ body {
 
 .hero-description {
   color: #9ca3af;
-  text-align: left;
   font-size: 18px;
   line-height: 1.6;
 }
@@ -213,6 +212,7 @@ body {
 .project-description {
   color: #9ca3af;
   margin: 10px 0 15px;
+  text-align: left;
 }
 
 .project-links {
