@@ -27,7 +27,7 @@ useEffect(() => {
     title: editingProject.title || "",
     description: editingProject.description ||  "",
     progress: editingProject.progress || "",
-    skills: editingProject.skill || [],
+    skills: editingProject.skills || [],
     type: editingProject.type || "",
     liveDemo: editingProject.liveDemo || "",
     github: editingProject.github || "",
@@ -69,9 +69,8 @@ useEffect(() => {
       title: formData.title,
       description: formData.description,
       progress: formData.progress,
-      skill: formData.skills,
+      skills: formData.skills,
       type: formData.type,
-      status: Number(formData.progress) === 100 ? "Complete" : "In Progress",
       liveDemo: formData.liveDemo,
       github: formData.github,
     };
@@ -89,7 +88,6 @@ useEffect(() => {
       progress: "",
       skills: [],
       type: "",
-      status: "",
       liveDemo: "",
       github: "",
     });

@@ -94,7 +94,7 @@ function Home({ isAdmin, projects, setProjects, deleteProject, addProject, setEd
                   <p>{project.type}</p>
                   <h3>{project.title}</h3>
                 </div>
-                <span>{project.status}</span>
+                <span>{Number(project.progress) >= 100 ? "Complete" : "In Progress"}</span>
               </div>
               <p className="project-description">{project.description}</p>
               <div className="skill-list">
