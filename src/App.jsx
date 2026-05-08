@@ -103,20 +103,22 @@ function Home({ isAdmin, projects, setProjects, deleteProject, addProject, setEd
                 ))}
               </div>
 
-               <div className="project-links">{project.liveDemo !== "" && 
-              (
-                <a href={project.liveDemo.startsWith('http') ? project.liveDemo : `https://${project.liveDemo}`} target="_blank" rel="noopener noreferrer"> {/* checks if it has HTTP and adds HTTPS if it doesn't*/}
-                  Live Demo
-                </a>
-              )}
-              </div>
-              
-              <div className="project-links">{project.github !== "" && 
-              (
-                <a href={project.github.startsWith('http') ? project.github : `https://${project.github}`} target="_blank" rel="noopener noreferrer"> {/* Also opens in new tab, and doesnt allow the new tab to access origin tab */}
-                  GitHub
-                </a>
-              )}
+              <div className="project-links">
+                <div>{project.liveDemo !== "" && 
+                  (
+                    <a href={project.liveDemo.startsWith('http') ? project.liveDemo : `https://${project.liveDemo}`} target="_blank" rel="noopener noreferrer"> {/* checks if it has HTTP and adds HTTPS if it doesn't*/}
+                      Live Demo
+                    </a>
+                  )}
+                </div>
+
+                <div>{project.github !== "" && 
+                  (
+                    <a href={project.github.startsWith('http') ? project.github : `https://${project.github}`} target="_blank" rel="noopener noreferrer"> {/* Also opens in new tab, and doesnt allow the new tab to access origin tab */}
+                      GitHub
+                    </a>
+                  )}
+                </div>
               </div>
 
               <div className="project-buttons">

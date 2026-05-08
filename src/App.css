@@ -215,6 +215,7 @@ body {
 .project-links {
   margin-top: 15px;
   display: flex;
+  flex-direction: row;
   gap: 15px;
 }
 
