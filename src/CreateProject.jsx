@@ -198,8 +198,8 @@ useEffect(() => {
                 onChange={handleChange}
               >
               <option value="">Select Type</option>
-              <option value="Front-End">Front-end</option>
-              <option value="Back-End">Back-end</option>
+              <option value="Front-End">Front-End</option>
+              <option value="Back-End">Back-End</option>
               <option value="Full-Stack">Full-Stack</option>
               <option value="Cloud">Cloud</option>
               <option value="DevOps">DevOps</option>
