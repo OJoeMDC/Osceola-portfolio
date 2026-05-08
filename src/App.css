@@ -200,6 +200,7 @@ body {
 
 .project-topline {
   display: flex;
+  text-align: left;
   justify-content: space-between;
   margin-bottom: 10px;
 }
