@@ -87,6 +87,7 @@ body {
 
 .hero-description {
   color: #9ca3af;
+  text-align: left;
   font-size: 18px;
   line-height: 1.6;
 }
