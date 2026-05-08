@@ -34,6 +34,7 @@ useEffect(() => {
     });
 
     console.log("Editing project:", editingProject);
+    console.log("Loaded skills:", editingProject.skills);
     setShowForm(true);
   }
 }, [editingProject]);
