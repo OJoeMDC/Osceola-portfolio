@@ -98,7 +98,7 @@ function Home({ isAdmin, projects, setProjects, deleteProject, addProject, setEd
               </div>
               <p className="project-description">{project.description}</p>
               <div className="skill-list">
-                {project.skill.map((item) => (
+                {project.skills.map((item) => (
                   <span key={item}>{item}</span>
                 ))}
               </div>
