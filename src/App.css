@@ -114,7 +114,7 @@ body {
 }
 
 .secondary-button {
-  background: var(--mainBg);
+  background: var(--secondaryBg);
   border: 1px solid var(--borderColor);
   padding: 12px 20px;
   border-radius: 12px;
@@ -125,7 +125,7 @@ body {
 
 /* SIDE CARD */
 .focus-card {
-  background: var(--secondaryBg);
+  background: var(--cardColor);
   border: 1px solid var(--borderColor);
   border-radius: 20px;
   padding: 20px;
@@ -145,7 +145,7 @@ body {
 .category-item {
   display: flex;
   justify-content: space-between;
-  background: var(--cardColor);
+  background: var(--secondaryBg);
   padding: 10px 14px;
   border-radius: 12px;
   font-size: 14px;
