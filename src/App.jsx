@@ -40,8 +40,20 @@ function Home({ isAdmin, projects, setProjects, deleteProject, addProject, setEd
               Full-stack developer experienced in building scalable applications and cloud-based solutions.
             </p>
             <div className="hero-buttons">
-              <a className="primary-button" href="#projects">View Projects</a>
-              <a className="secondary-button" href="#contact">Contact Me</a>
+              <button onClick={() => 
+                document.getElementById("projects")?.scrollIntoView({behavior: "smooth"},
+                )}
+                >
+                  View Projects
+              </button>
+
+              <button onClick={() => 
+                document.getElementById("contact")?.scrollIntoView({behavior: "smooth",}
+                )}
+                >
+                  Contact Me
+                </button>
+              {/* <a className="secondary-button" href="#contact">Contact Me</a> */}
             </div>
           </section>
 
@@ -78,7 +90,7 @@ function Home({ isAdmin, projects, setProjects, deleteProject, addProject, setEd
               setEditingProject={setEditingProject} 
               />}
 
-      <section className="section-container projects">
+      <section className="section-container projects" id="projects">
         <div className="section-heading">
           <div>
             <h2>Work Board</h2>
