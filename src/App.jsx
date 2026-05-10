@@ -42,14 +42,14 @@ function Home({ isAdmin, projects, setProjects, deleteProject, addProject, setEd
             <div className="hero-buttons">
               <button onClick={() => 
                 document.getElementById("projects")?.scrollIntoView({behavior: "smooth"},
-                )}
+                )} className="primary-button"
                 >
                   View Projects
               </button>
 
               <button onClick={() => 
                 document.getElementById("contact")?.scrollIntoView({behavior: "smooth",}
-                )}
+                )} className="second-button"
                 >
                   Contact Me
                 </button>
