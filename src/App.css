@@ -14,8 +14,8 @@ body,
 
 body {
   font-family: system-ui, -apple-system, sans-serif;
-  background: #0f1117;
-  color: #e5e7eb;
+  background: var(bg-gray);
+  color: var(body-bg);
 }
 
 .portfolio-page {
@@ -31,14 +31,14 @@ body {
 .nav {
   position: sticky;
   top: 0;
-  background: #0f1117;
+  background: var(bg-gray);
   padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 60px;
   z-index: 1000;
-  border-bottom: 1px solid #2a2d35;
+  border-bottom: 1px solid var(border-color);
 }
 
 .logo {
@@ -52,12 +52,12 @@ body {
 }
 
 .nav-links a {
-  color: #9ca3af;
+  color: var(subtext);
   text-decoration: none;
 }
 
 .nav-links a:hover {
-  color: white;
+  color: var(text-main);
 }
 
 /* HERO */
@@ -82,11 +82,11 @@ body {
   font-size: 56px;
   line-height: 1.1;
   margin: 10px 0 20px;
-  color: white;
+  color: var(text-main);
 }
 
 .hero-description {
-  color: #9ca3af;
+  color: var(subtext);
   font-size: 18px;
   line-height: 1.6;
 }
@@ -94,7 +94,7 @@ body {
 .eyebrow {
   font-size: 12px;
   letter-spacing: 2px;
-  color: #60a5fa;
+  color: var(text-eyebrow);
   text-transform: uppercase;
 }
 
@@ -105,33 +105,34 @@ body {
 }
 
 .primary-button {
-  background: #3b82f6;
+  background: var(color-main);
   padding: 12px 20px;
   border-radius: 12px;
-  color: white;
+  color: var(text-main);
   text-decoration: none;
   text-transform: uppercase;
 }
 
 .secondary-button {
-  border: 1px solid #444;
+  background: var(color-bg);
+  border: 1px solid var(color-bg);
   padding: 12px 20px;
   border-radius: 12px;
-  color: #ddd;
+  color: var(text-main);
   text-decoration: none;
   text-transform: uppercase;
 }
 
 /* SIDE CARD */
 .focus-card {
-  background: #181a20;
-  border: 1px solid #2a2d35;
+  background: var(card-color);
+  border: 1px solid var(border-color);
   border-radius: 20px;
   padding: 20px;
 }
 
 .focus-card h2 {
-  color: white;
+  color: var(text-main);
 }
 
 .category-list {
@@ -144,14 +145,14 @@ body {
 .category-item {
   display: flex;
   justify-content: space-between;
-  background: #0f1117;
+  background: var(bg-gray);
   padding: 10px 14px;
   border-radius: 12px;
   font-size: 14px;
 }
 
 .experience {
-  color: #60a5fa;
+  color: var(text-eyebrow);
 }
 
 
@@ -173,7 +174,7 @@ body {
 
 .section-heading h2 {
   font-size: 36px;
-  color: white;
+  color: var(text-main);
 }
 
 .project-grid {
@@ -183,8 +184,8 @@ body {
 }
 
 .project-card {
-  background: #181a20;
-  border: 1px solid #2a2d35;
+  background: var(card-color);
+  border: 1px solid var(border-color);
   padding: 20px;
   border-radius: 20px;
   transition: 0.2s;
@@ -192,7 +193,7 @@ body {
 
 .project-card:hover {
   transform: translateY(-3px);
-  border-color: #3b82f6;
+  border-color: var(color-main);
 }
 
 .project-buttons button {
@@ -212,7 +213,7 @@ body {
 }
 
 .project-description {
-  color: #9ca3af;
+  color: var(subtext);
   margin: 10px 0 15px;
   text-align: left;
 }
@@ -225,12 +226,12 @@ body {
 }
 
 .project-links a {
-  color: #60a5fa;
+  color: var(text-eyebrow);
   text-decoration: none;
 }
 
 .project-links a:hover {
-  color: #93c5fd;
+  color: var(a-hover);
 }
 
 /* SKILLS */
@@ -241,7 +242,7 @@ body {
 }
 
 .skills-section h2 {
-  color: white;
+  color: var(text-main);
 }
 
 .skill-list {
@@ -253,7 +254,7 @@ body {
 .skill-list span {
   padding: 4px 10px;
   border-radius: 999px;
-  border: 1px solid #444;
+  border: 1px solid var(color-bg);
   font-size: 12px;
 }
 
@@ -262,12 +263,12 @@ body {
   flex-direction: column;
   padding: 30px;
   border-radius: 20px;
-  border: 1px solid #444;
+  border: 1px solid var(color-bg);
 }
 
 .skills-card h2 {
   margin: 10px 0 20px;
-  color: white;
+  color: var(text-main);
 }
 
 .skills-grid {
@@ -277,13 +278,13 @@ body {
 }
 
 .skills-grid div {
-  background: #0f1117;
+  background: var(bg-gray);
   padding: 15px;
   border-radius: 12px;
 }
 
 .highlight {
-  color: #3b82f6;
+  color: var(color-main);
 }
 
 .list {
@@ -306,15 +307,15 @@ body {
 }
 
 .contact-section h2 {
-  color: white;
+  color: var(text-main);
 }
 
 .contact-card {
-  background: #0f1117;
-  color: white;
+  background: var(bg-gray);
+  color: var(text-main);
   padding: 30px;
   border-radius: 20px;
-  border: 1px solid #444;
+  border: 1px solid var(color-bg);
 }
 
 .contact-card p {
@@ -328,18 +329,18 @@ body {
 }
 
 .email-button {
-  color: #ddd;
+  color: var(text-main);
   padding: 10px 16px;
   border-radius: 10px;
   text-decoration: none;
-  border: 1px solid #444;
+  border: 1px solid var(color-bg);
 }
 
 .linkedin-button {
-  background-color: #3b82f6;
+  background-color: var(color-main);
   padding: 10px 16px;
   border-radius: 10px;
-  color: white;
+  color: var(text-main);
   text-decoration: none;
 }
 
