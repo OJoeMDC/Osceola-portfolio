@@ -49,11 +49,10 @@ function Home({ isAdmin, projects, setProjects, deleteProject, addProject, setEd
 
               <button onClick={() => 
                 document.getElementById("contact")?.scrollIntoView({behavior: "smooth",}
-                )} className="second-button"
+                )} className="secondary-button"
                 >
                   Contact Me
                 </button>
-              {/* <a className="secondary-button" href="#contact">Contact Me</a> */}
             </div>
           </section>
 

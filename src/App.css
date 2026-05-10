@@ -110,6 +110,7 @@ body {
   border-radius: 12px;
   color: white;
   text-decoration: none;
+  text-transform: uppercase;
 }
 
 .secondary-button {
@@ -118,6 +119,7 @@ body {
   border-radius: 12px;
   color: #ddd;
   text-decoration: none;
+  text-transform: uppercase;
 }
 
 /* SIDE CARD */
