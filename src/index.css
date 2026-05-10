@@ -1,18 +1,18 @@
 :root {
-  --color-bg: #444;
-  --color-main: #3b82f6;
-  --text-main: #ddd;
-  --text-eyebrow: #60a5fa;
+  --secondaryBg: #444;
+  --colorMain: #3b82f6;
+  --textMain: #ddd;
+  --textEyebrow: #60a5fa;
 
-  --body-bg: #e5e7eb;
-  --border-color: #2a2d35;
+  --mainBg: #e5e7eb;
+  --borderColor: #2a2d35;
 
-  --bg-gray: #0f1117;
+  --bodyBg: #0f1117;
   --subtext: #9ca3af;
 
-  --card-color: #181a20;
+  --cardColor: #181a20;
 
-  --a-hover: #93c5fd;
+  --aHover: #93c5fd;
 
   --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
   --heading: system-ui, 'Segoe UI', Roboto, sans-serif;

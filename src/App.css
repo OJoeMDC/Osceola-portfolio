@@ -14,8 +14,8 @@ body,
 
 body {
   font-family: system-ui, -apple-system, sans-serif;
-  background: var(bg-gray);
-  color: var(body-bg);
+  background: var(secondaryBg);
+  color: var(bodyBg);
 }
 
 .portfolio-page {
@@ -31,14 +31,14 @@ body {
 .nav {
   position: sticky;
   top: 0;
-  background: var(bg-gray);
+  background: var(secondaryBg);
   padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 60px;
   z-index: 1000;
-  border-bottom: 1px solid var(border-color);
+  border-bottom: 1px solid var(borderColor);
 }
 
 .logo {
@@ -57,7 +57,7 @@ body {
 }
 
 .nav-links a:hover {
-  color: var(text-main);
+  color: var(textMain);
 }
 
 /* HERO */
@@ -82,7 +82,7 @@ body {
   font-size: 56px;
   line-height: 1.1;
   margin: 10px 0 20px;
-  color: var(text-main);
+  color: var(textMain);
 }
 
 .hero-description {
@@ -94,7 +94,7 @@ body {
 .eyebrow {
   font-size: 12px;
   letter-spacing: 2px;
-  color: var(text-eyebrow);
+  color: var(textEyebrow);
   text-transform: uppercase;
 }
 
@@ -105,34 +105,34 @@ body {
 }
 
 .primary-button {
-  background: var(color-main);
+  background: var(colorMain);
   padding: 12px 20px;
   border-radius: 12px;
-  color: var(text-main);
+  color: var(textMain);
   text-decoration: none;
   text-transform: uppercase;
 }
 
 .secondary-button {
-  background: var(color-bg);
-  border: 1px solid var(color-bg);
+  background: var(mainBg);
+  border: 1px solid var(borderColor);
   padding: 12px 20px;
   border-radius: 12px;
-  color: var(text-main);
+  color: var(textMain);
   text-decoration: none;
   text-transform: uppercase;
 }
 
 /* SIDE CARD */
 .focus-card {
-  background: var(card-color);
-  border: 1px solid var(border-color);
+  background: var(cardColor);
+  border: 1px solid var(borderColor);
   border-radius: 20px;
   padding: 20px;
 }
 
 .focus-card h2 {
-  color: var(text-main);
+  color: var(textMain);
 }
 
 .category-list {
@@ -145,14 +145,14 @@ body {
 .category-item {
   display: flex;
   justify-content: space-between;
-  background: var(bg-gray);
+  background: var(secondaryBg);
   padding: 10px 14px;
   border-radius: 12px;
   font-size: 14px;
 }
 
 .experience {
-  color: var(text-eyebrow);
+  color: var(textEyebrow);
 }
 
 
@@ -174,7 +174,7 @@ body {
 
 .section-heading h2 {
   font-size: 36px;
-  color: var(text-main);
+  color: var(textMain);
 }
 
 .project-grid {
@@ -184,8 +184,8 @@ body {
 }
 
 .project-card {
-  background: var(card-color);
-  border: 1px solid var(border-color);
+  background: var(cardColor);
+  border: 1px solid var(borderColor);
   padding: 20px;
   border-radius: 20px;
   transition: 0.2s;
@@ -193,7 +193,7 @@ body {
 
 .project-card:hover {
   transform: translateY(-3px);
-  border-color: var(color-main);
+  border-color: var(colorMain);
 }
 
 .project-buttons button {
@@ -226,12 +226,12 @@ body {
 }
 
 .project-links a {
-  color: var(text-eyebrow);
+  color: var(textEyebrow);
   text-decoration: none;
 }
 
 .project-links a:hover {
-  color: var(a-hover);
+  color: var(aHover);
 }
 
 /* SKILLS */
@@ -242,7 +242,7 @@ body {
 }
 
 .skills-section h2 {
-  color: var(text-main);
+  color: var(textMain);
 }
 
 .skill-list {
@@ -268,7 +268,7 @@ body {
 
 .skills-card h2 {
   margin: 10px 0 20px;
-  color: var(text-main);
+  color: var(textMain);
 }
 
 .skills-grid {
@@ -278,13 +278,13 @@ body {
 }
 
 .skills-grid div {
-  background: var(bg-gray);
+  background: var(secondaryBg);
   padding: 15px;
   border-radius: 12px;
 }
 
 .highlight {
-  color: var(color-main);
+  color: var(colorMain);
 }
 
 .list {
@@ -307,12 +307,12 @@ body {
 }
 
 .contact-section h2 {
-  color: var(text-main);
+  color: var(textMain);
 }
 
 .contact-card {
-  background: var(bg-gray);
-  color: var(text-main);
+  background: var(secondaryBg);
+  color: var(textMain);
   padding: 30px;
   border-radius: 20px;
   border: 1px solid var(color-bg);
@@ -329,7 +329,7 @@ body {
 }
 
 .email-button {
-  color: var(text-main);
+  color: var(textMain);
   padding: 10px 16px;
   border-radius: 10px;
   text-decoration: none;
@@ -337,10 +337,10 @@ body {
 }
 
 .linkedin-button {
-  background-color: var(color-main);
+  background-color: var(colorMain);
   padding: 10px 16px;
   border-radius: 10px;
-  color: var(text-main);
+  color: var(textMain);
   text-decoration: none;
 }
 
