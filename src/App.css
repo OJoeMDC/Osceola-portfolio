@@ -31,7 +31,7 @@ body {
 .nav {
   position: sticky;
   top: 0;
-  background: var(--secondaryBg);
+  background: var(--cardColor);
   padding: 20px;
   display: flex;
   justify-content: space-between;
@@ -104,9 +104,15 @@ body {
   gap: 15px;
 }
 
+.hero-buttons button {
+  text-transform: uppercase;
+  font-weight: 900px;
+}
+
 .primary-button {
   background: var(--colorMain);
   padding: 12px 20px;
+  border: 1px solid var(--borderColor);
   border-radius: 12px;
   color: var(--textMain);
   text-decoration: none;
@@ -120,7 +126,11 @@ body {
   border-radius: 12px;
   color: var(--textMain);
   text-decoration: none;
-  text-transform: uppercase;
+}
+
+.secondary-button:hover {
+  background: var(--borderColor);
+  border: 1px solid var(--borderSecondary);
 }
 
 /* SIDE CARD */
@@ -234,15 +244,11 @@ body {
   color: var(--aHover);
 }
 
-/* SKILLS */
+/* QUALIFICATIONS */
 
-.skills-section {
+.quals-section {
   width: min(100% - 40px, 1200px);
   margin-inline: auto;
-}
-
-.skills-section h2 {
-  color: var(--textMain);
 }
 
 .skill-list {
@@ -251,40 +257,48 @@ body {
   gap: 8px;
 }
 
-.skill-list span {
-  padding: 4px 10px;
-  border-radius: 999px;
-  border: 1px solid var(--cardColor);
-  font-size: 12px;
-}
 
-.skills-card {
+.quals-card {
   display: flex;
   flex-direction: column;
   padding: 30px;
   border-radius: 20px;
-  border: 1px solid var(--borderColor);
 }
 
-.skills-card h2 {
-  margin: 10px 0 20px;
+.quals-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: left;
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.quals-heading h2 {
   color: var(--textMain);
+  text-align: left;
+  font-size: 36px;
 }
 
-.skills-grid {
+.quals-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 15px;
 }
 
-.skills-grid div {
-  background: var(--secondaryBg);
+.quals-grid div {
   padding: 15px;
   border-radius: 12px;
 }
 
+.cred-card {
+  background: var(--cardColor);
+  border: 1px solid var(--borderColor);
+}
+
 .highlight {
   color: var(--colorMain);
+  font-size: 110%;
 }
 
 .list {
