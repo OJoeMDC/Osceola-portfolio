@@ -80,5 +80,7 @@ npm run deploy
 
 Built by **Osceola Martin del Campo** — a full-stack developer focused on building scalable web applications and cloud-based solutions with React, Node.js, AWS, and more.
 
+This project was built with the assistance of **ChatGPT**, which helped with code development, debugging, and project setup.
+
 - Email: ojoe.mdc@gmail.com
 - LinkedIn: [Osceola Martin del Campo](https://www.linkedin.com/in/osceola-martin-del-campo-0ab1b6328)
