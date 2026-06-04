@@ -81,7 +81,6 @@ function Home({ isAdmin, projects, setProjects, deleteProject, addProject, setEd
 
 
       {/* Projects Section */}
-
               {isAdmin && <CreateProject 
               addProject={addProject} 
               editingProject={editingProject} 
@@ -240,7 +239,9 @@ function App() {
     setProjects(data);
   }
   
-  // DELETE
+  ////////////
+  // DELETE //
+  ////////////
   async function deleteProject(projectID) {
     await fetch(`${API}/projects/${projectID}`, {
       method: "DELETE",

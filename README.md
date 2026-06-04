@@ -22,6 +22,7 @@ A personal portfolio website showcasing projects, skills, and experience as a fu
 - **Qualifications section** — certifications, skills, and education
 - **Contact section** with email and LinkedIn links
 - **Mobile-responsive** layout
+- **BackendProject Deployment** 
 
 ## Project Structure
 
