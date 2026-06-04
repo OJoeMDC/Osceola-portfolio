@@ -200,6 +200,7 @@ function Home({ isAdmin, projects, setProjects, deleteProject, addProject, setEd
                 <li>React Developer Course</li>
                 <p className="eyebrow listTitle">College Education</p>
                 <li>AS Information Technology | SNHU</li>
+                <p>New Test Run, Pls dlt this</p>
               </ul>
             </div>
           </div>
