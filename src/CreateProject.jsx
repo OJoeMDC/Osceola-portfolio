@@ -109,6 +109,11 @@ useEffect(() => {
   "DynamoDB",
   "Lambda",
   "API Gateway",
+  "VITE",
+  "Node.js",
+  "Next.js",
+  "Nest.js",
+  "SQL",
 ];
 
 // Handle skill checkbox toggle
