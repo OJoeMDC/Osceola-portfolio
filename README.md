@@ -6,7 +6,7 @@ A personal portfolio website showcasing projects, skills, and experience as a fu
 
 ## Live Demo
 
-[https://OsceolaDev.com](https://OsceolaDev.com)
+[OsceolaDev.com](https://OsceolaDev.com)
 
 ## Tech Stack
 
