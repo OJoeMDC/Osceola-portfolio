@@ -6,7 +6,7 @@ A personal portfolio website showcasing projects, skills, and experience as a fu
 
 ## Live Demo
 
-[https://ojoe.github.io/Osceola-portfolio](https://ojoe.github.io/Osceola-portfolio)
+[https://OsceolaDev.com](https://OsceolaDev.com)
 
 ## Tech Stack
 
