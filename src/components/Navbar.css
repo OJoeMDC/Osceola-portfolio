@@ -1,0 +1,32 @@
+/* NAV */
+.nav {
+  position: sticky;
+  top: 0;
+  background: var(--cardColor);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 60px;
+  z-index: 1000;
+  border-bottom: 1px solid var(--borderColor);
+}
+
+.logo {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: var(--subtext);
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  color: var(--textMain);
+}
