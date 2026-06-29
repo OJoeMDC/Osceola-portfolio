@@ -7,7 +7,7 @@ export default function Layout() {
 
   useEffect(() => {
     window.gtag?.("config", "G-888TWB2CFS", {
-      page_path: location.pathname,
+      page_path: window.location.hash || '/',
     });
   }, [location]);
 
