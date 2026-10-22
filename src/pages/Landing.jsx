@@ -1,9 +1,35 @@
 import CreateProject from "./CreateProject";
-import "./Landing.css"
+import "./Landing.css";
+import Projects from '../components/Projects.jsx';
 
 const categories = ["Front-End", "Back-End", "Full-Stack"];
 
-export default function Landing({ isAdmin, projects, setProjects, deleteProject, addProject, setEditingProject, editingProject, editProject }) {
+export default function Landing({ isAdmin, projects, setProjects, deleteProject, addProject, setEditingProject, editingProject, editProject, activeCard, setActiveCard, reorderProjects, originalList }) {
+  const onDrop = async (position) => {
+        originalList.current= [...projects];
+        console.log(`${activeCard} is going to be placed at ${position}`)
+
+        if(activeCard == null || activeCard === undefined) return;
+
+        const projectToMove = projects[activeCard];
+        console.log(activeCard);
+        const updatedProjects = projects.filter((project, index) => index !== activeCard)
+        console.log(updatedProjects);
+
+        updatedProjects.splice(position, 0, {
+          ...projectToMove
+        })
+
+        try {
+          setProjects(updatedProjects);
+          await reorderProjects(updatedProjects);
+          console.log(projects);
+          console.log("Projects reordered successfully");
+        } catch (err) {
+          setProjects(originalList.current);
+          console.error("Failed to reorder projects:", err);
+        }
+    };
 
   return(
     <main className="portfolio-page">
@@ -58,73 +84,20 @@ export default function Landing({ isAdmin, projects, setProjects, deleteProject,
 
 
 
-      {/* Projects Section */}
-              {isAdmin && <CreateProject 
-              addProject={addProject} 
-              editingProject={editingProject} 
-              editProject={editProject} 
-              setEditingProject={setEditingProject} 
-              />}
-
-      <section className="section-container projects" id="projects">
-        <div className="section-heading">
-          <div>
-            <h2>Work Board</h2>
-            <p className="eyebrow">Projects</p>
-          </div>
-        </div>
-
-        <div className="project-grid">
-          {projects.map((project) => (
-            <article className="project-card" key={project.id}>
-              <div className="project-topline">
-                <div>
-                  <p>{project.type}</p>
-                  <h3>{project.title}</h3>
-                </div>
-                <span>{Number(project.progress) >= 100 ? "Complete" : "In Progress"}</span>
-              </div>
-              <p className="project-description">{project.description}</p>
-              <div className="skill-list">
-                {project.skills.map((item) => (
-                  <span key={item}>{item}</span>
-                ))}
-              </div>
-
-              <div className="project-links">
-                <div>{project.liveDemo !== "" && 
-                  (
-                    <a href={project.liveDemo.startsWith('http') ? project.liveDemo : `https://${project.liveDemo}`} target="_blank" rel="noopener noreferrer"> {/* checks if it has HTTP and adds HTTPS if it doesn't*/}
-                      Live Demo
-                    </a>
-                  )}
-                </div>
-
-                <div>{project.github !== "" && 
-                  (
-                    <a href={project.github.startsWith('http') ? project.github : `https://${project.github}`} target="_blank" rel="noopener noreferrer"> {/* Also opens in new tab, and doesnt allow the new tab to access origin tab */}
-                      GitHub
-                    </a>
-                  )}
-                </div>
-              </div>
-
-              <div className="project-buttons">
-                {isAdmin && (
-                  <>
-                    <button className="delete-button" onClick={() => deleteProject(project.id)}>
-                      Delete
-                    </button>
-                    <button className="edit-button" onClick={() => setEditingProject(project)}>
-                        Edit
-                    </button>
-                  </>
-                )}
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
+      <Projects 
+        CreateProject={CreateProject} 
+        isAdmin={isAdmin}
+        projects={projects}
+        addProject={addProject}
+        setProjects={setProjects}
+        deleteProject={deleteProject}
+        setEditingProject={setEditingProject}
+        editingProject={editingProject}
+        editProject={editProject}
+        activeCard={activeCard}
+        setActiveCard={setActiveCard}
+        onDrop={onDrop}
+      />
 
 
 
