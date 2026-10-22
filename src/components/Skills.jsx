@@ -24,6 +24,8 @@ export default function Skills() {
                 <li> React</li>
                 <li> CSS</li>
                 <li>Node.js</li>
+                <li>JavaScript</li>
+                <li>HTML/CSS</li>
                 <p className="eyebrow listTitle">Design</p>
                 <li> Framer</li>
                 <li> Figma</li>
@@ -36,6 +38,7 @@ export default function Skills() {
                 <li> Local storage</li>
                 <li> Server-side logic</li>
                 <li> AWS & Azure</li>
+                <li>RESTful APIs</li>
               </ul>
             </div>
             <div className="cred-card">
@@ -48,6 +51,7 @@ export default function Skills() {
                 <li>HTML + CSS Developer Course</li>
                 <li>React Developer Course</li>
                 <p className="eyebrow listTitle">College Education</p>
+                <li>BS Cloud & Network Engineering | WGU</li>
                 <li>AS Information Technology | SNHU</li>
               </ul>
             </div>
