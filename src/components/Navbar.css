@@ -17,16 +17,38 @@
   font-size: 18px;
 }
 
+.logo:hover {
+  color: var(--colorMain)
+}
+
 .nav-links {
   display: flex;
   gap: 20px;
 }
 
-.nav-links a {
-  color: var(--subtext);
-  text-decoration: none;
+.nav-link-main {
+  border: none;
+  background: none;
 }
 
-.nav-links a:hover {
-  color: var(--textMain);
+.nav-link-main:hover {
+  border: none;
+  background: none;
+}
+
+.nav-link {
+  color: var(--subtext);
+  text-decoration: none;
+
+  background: none;
+  border: none;
+
+  padding: 0px;
+  margin: 0px;
+}
+
+.nav-link:hover {
+  color: var(--colorMain);
+  background: none;
+  border: none;
 }
